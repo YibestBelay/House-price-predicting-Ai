@@ -9,7 +9,7 @@ document.getElementById("prediction-form").addEventListener("submit", async func
     };
 
     try {
-        const response = await fetch("https://your-render-app.onrender.com/predict/", {
+        const response = await fetch("https://your-render-app.onrender.com/predict/", ...{
     method: "POST",
     headers: {
         "Content-Type": "application/json",
