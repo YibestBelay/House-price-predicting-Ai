@@ -1,7 +1,7 @@
 document.getElementById("prediction-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const data = {
+    const inputData = {
         rm: parseFloat(document.getElementById("rm").value),
         lstat: parseFloat(document.getElementById("lstat").value),
         ptratio: parseFloat(document.getElementById("ptratio").value),
