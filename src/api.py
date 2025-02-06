@@ -5,6 +5,8 @@ import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 # Load the trained Ridge model
 with open("src/best_model.pkl", "rb") as f:
@@ -21,6 +23,14 @@ app.add_middleware(
     allow_headers=["*"],   # Allow all headers
 )
 
+
+# Serve static frontend files
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
+# Serve the main index.html file
+@app.get("/")
+def serve_frontend():
+    return FileResponse("frontend/index.html")
 
 # Define input data schema
 class HouseFeatures(BaseModel):
