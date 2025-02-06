@@ -1,7 +1,7 @@
 document.getElementById("prediction-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const inputData = {
+    const data = {
         rm: parseFloat(document.getElementById("rm").value),
         lstat: parseFloat(document.getElementById("lstat").value),
         ptratio: parseFloat(document.getElementById("ptratio").value),
@@ -9,14 +9,11 @@ document.getElementById("prediction-form").addEventListener("submit", async func
     };
 
     try {
-        const response = await fetch("https://house-price-predicting-ai.onrender.com/predict/",{
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify(inputData),
-})
-
+        const response = await fetch("http://127.0.0.1:8000/predict/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
 
         if (!response.ok) {
             const errorText = await response.text();
