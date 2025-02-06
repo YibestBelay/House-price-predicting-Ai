@@ -9,7 +9,7 @@ document.getElementById("prediction-form").addEventListener("submit", async func
     };
 
     try {
-        const response = await fetch("/predict/", {
+        const response = await fetch("https://house-price-predicting-ai-1.onrender.com/predict/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
