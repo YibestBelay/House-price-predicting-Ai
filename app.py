@@ -18,7 +18,7 @@ with st.form("prediction_form"):
 # Prediction Logic
 if submit_button:
     # Backend API URL (update with your Render-deployed FastAPI URL)
-    api_url = "http://127.0.0.1:8000/predict/"
+    api_url = "https://house-price-predicting-ai.onrender.com/predict/"
 
     # Prepare input data
     input_data = {
