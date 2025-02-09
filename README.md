@@ -1,5 +1,8 @@
 # House Price Prediction Application
 
+website link: https://yibestbelay-house-price-predicting-ai-app-uznifd.streamlit.app/
+API link: https://house-price-predicting-ai.onrender.com/
+
 This project is a **House Price Prediction Application** built using **FastAPI** for the backend and a Streamlit-based frontend. The application predicts house prices based on various input features, utilizing a trained Ridge Regression model. The backend is deployed on **Render**, and the application provides a seamless user experience.
 
 ---
